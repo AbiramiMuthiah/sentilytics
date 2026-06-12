@@ -70,9 +70,9 @@ The platform supports multilingual comments and generates AI-powered summaries o
 
 ![Dashboard](assets/dashboard.png)
 
-### Logib=n
+### Login
 
-## ![Login](assets/login.png)
+![Login](assets/login.png)
 
 ## System Architecture
 
