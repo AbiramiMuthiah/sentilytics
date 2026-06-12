@@ -68,11 +68,17 @@ The platform supports multilingual comments and generates AI-powered summaries o
 
 ### Dashboard
 
-![Dashboard](assets/dashboard.png)
+![Dashboard](assets/Dashboard.png)
 
-### Login
+### Sentiment Charts
 
-![Login](assets/login.png)
+![Sentiment Charts](assets/sentiment-charts.png)
+
+### Comments Analysis
+
+![Comments Analysis](assets/comments-analysis.png)
+
+---
 
 ## System Architecture
 
@@ -148,7 +154,7 @@ export OPENAI_API_KEY=your_openai_api_key
 ### 4. Run the Dashboard
 
 ```bash
-streamlit run sentilytics/app.py
+streamlit run live_youtube_analysis.py
 # Opens at http://localhost:8501
 ```
 
@@ -160,9 +166,11 @@ streamlit run sentilytics/app.py
 sentilytics/
 ├── sentilytics/
 │   └── sentilytics_scraper/   # YouTube comment extraction
-│       ├── scraper.py         # YouTube Data API integration
-│       ├── preprocessor.py    # Text cleaning pipeline
-│       └── sentiment.py       # BERT + VADER classification
+├── assets/                    # Screenshots
+│   ├── Dashboard.png
+│   ├── sentiment-charts.png
+│   └── comments-analysis.png
+├── live_youtube_analysis.py   # Main Streamlit app
 ├── requirements.txt
 └── README.md
 ```
@@ -173,7 +181,7 @@ sentilytics/
 
 - Multi-platform support (Twitter/X, Reddit, Instagram)
 - Real-time live stream comment analysis
-- Emotion detection (beyond positive/negative/neutral)
+- Emotion detection beyond positive/negative/neutral
 - Fine-tuned multilingual BERT model
 - User authentication and saved analysis history
 - Cloud deployment on Streamlit Cloud or AWS
