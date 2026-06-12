@@ -2,182 +2,192 @@
 
 # Sentilytics
 
-### AI-Powered YouTube Sentiment Analysis Dashboard
+### Multilingual YouTube Comment Sentiment Analysis Platform
 
 <p align="center">
-  Real-time multilingual YouTube comment sentiment analysis platform powered by <strong>BERT</strong>, <strong>OpenAI</strong>, <strong>Streamlit</strong>, and <strong>NLP pipelines</strong>.
+  A real-time sentiment analysis dashboard that extracts YouTube comments and classifies them using <strong>BERT</strong> and <strong>VADER</strong> — with AI-generated audience summaries and interactive analytics.
 </p>
 
 <br/>
 
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+<img src="https://img.shields.io/badge/BERT-blueviolet?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
-<img src="https://img.shields.io/badge/BERT-NLP-blueviolet?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai"/>
 <img src="https://img.shields.io/badge/Transformers-FFB000?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly"/>
 <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas"/>
+
+![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
+![Language](https://img.shields.io/badge/Python-97%25-blue?style=flat-square)
 
 </div>
 
 ---
 
-# Overview
+## Overview
 
-Sentilytics is an AI-powered sentiment analysis dashboard designed to analyze YouTube comments in real time using Natural Language Processing and transformer-based deep learning models.
+Sentilytics is a sentiment analysis platform that analyzes YouTube comments in real time. It fetches comments from any YouTube video, runs them through a BERT and VADER NLP pipeline, and visualizes audience sentiment through an interactive Streamlit dashboard.
 
-The platform extracts comments from YouTube videos, performs multilingual sentiment analysis, generates AI-powered summaries, and visualizes audience reactions through interactive analytics dashboards.
-
-This project combines NLP engineering, AI analytics, and modern dashboard design into a complete end-to-end sentiment intelligence platform.
+The platform supports multilingual comments and generates AI-powered summaries of overall audience reaction, making it useful for content creators, marketers, and researchers.
 
 ---
 
-# Core Features
+## Key Features
 
-## AI Sentiment Analysis
-- Real-time YouTube comment analysis
-- BERT-powered sentiment classification
-- VADER sentiment scoring
-- Multilingual NLP processing
-- Positive, Neutral, and Negative prediction
+### Sentiment Analysis Engine
 
-## AI-Powered Summary
-- OpenAI-generated audience summary
-- Smart sentiment interpretation
-- Viewer feedback insights
-- Automated engagement analysis
+- BERT-based sentiment classification (Positive / Neutral / Negative)
+- VADER scoring for fast lexical sentiment estimation
+- Multilingual comment support
+- Confidence scores per classification
 
-## Interactive Dashboard
-- Modern dark-themed UI
-- Real-time sentiment charts
-- Pie chart and bar chart analytics
-- Searchable comment analysis table
-- Sentiment filtering system
-- CSV export functionality
+### YouTube Comment Scraper
 
-## NLP & Analytics Pipeline
 - YouTube Data API integration
-- Comment extraction pipeline
-- Transformer-based text analysis
+- Bulk comment extraction from any public video
+- Automated text preprocessing pipeline
 - Language detection support
-- Automated preprocessing workflow
+
+### Interactive Dashboard
+
+- Real-time sentiment breakdown charts (pie + bar)
+- Searchable and filterable comment table
+- Sentiment distribution by comment volume
+- CSV export for further analysis
+- Dark-themed modern UI built with Streamlit
+
+### AI Summary
+
+- OpenAI-generated audience reaction summary
+- Overall tone interpretation
+- Key sentiment drivers highlighted
 
 ---
-
-# Tech Stack
-
-| Category | Technologies |
-|---|---|
-| AI / NLP | BERT, Transformers, VADER, OpenAI |
-| Backend | Python |
-| Dashboard | Streamlit |
-| Data Processing | Pandas, NumPy |
-| Visualization | Plotly, Matplotlib |
-| APIs | YouTube Data API |
-| Tools | VS Code, GitHub |
-
----
-
-# Project Architecture
-
-```text
-YouTube Video URL
-        ↓
-YouTube Data API
-        ↓
-Comment Extraction Pipeline
-        ↓
-BERT + NLP Sentiment Analysis
-        ↓
-OpenAI Summary Generation
-        ↓
-Interactive Analytics Dashboard
-```
 
 ## Screenshots
 
 ### Dashboard
-![dashboard](assets/dashboard.png)
 
-### Sentiment Charts
-![charts](assets/sentiment-charts.png)
-
-### Comments Analysis
-![comments](assets/comments-analysis.png)
+![Dashboard](assets/dashboard.png)
 
 ---
 
-# System Workflow
+## System Architecture
 
-1. User enters YouTube video URL  
-2. YouTube API fetches comments  
-3. NLP pipeline preprocesses text  
-4. BERT performs sentiment analysis  
-5. OpenAI generates AI-powered summary  
-6. Dashboard visualizes insights  
-7. User exports sentiment analytics  
+```
+YouTube Video URL
+        |
+YouTube Data API
+        |
+Comment Extraction (sentilytics_scraper)
+        |
++----------------------------------+
+|  Text Preprocessing              |
+|  BERT Sentiment Classification   |
+|  VADER Sentiment Scoring         |
+|  OpenAI Summary Generation       |
++----------------------------------+
+        |
+Streamlit Analytics Dashboard
+        |
+CSV Export
+```
 
 ---
 
-# Installation Guide
+## Tech Stack
 
-## Clone Repository
+| Category        | Technologies              |
+| --------------- | ------------------------- |
+| AI / NLP        | BERT, Transformers, VADER |
+| AI Summary      | OpenAI API                |
+| Dashboard       | Streamlit                 |
+| Data Processing | Pandas, NumPy             |
+| Visualization   | Plotly, Matplotlib        |
+| APIs            | YouTube Data API v3       |
+| Language        | Python                    |
+| Tools           | GitHub, VS Code           |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.9+
+- YouTube Data API key (free at [console.cloud.google.com](https://console.cloud.google.com))
+- OpenAI API key (optional — for AI summary feature)
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/AbiramiMuthiah/sentilytics.git
-
 cd sentilytics
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Set Environment Variables
+
+```bash
+# Windows
+set YOUTUBE_API_KEY=your_youtube_api_key
+set OPENAI_API_KEY=your_openai_api_key
+
+# Mac/Linux
+export YOUTUBE_API_KEY=your_youtube_api_key
+export OPENAI_API_KEY=your_openai_api_key
+```
+
+### 4. Run the Dashboard
+
+```bash
+streamlit run sentilytics/app.py
+# Opens at http://localhost:8501
+```
 
 ---
 
-# Future Improvements
+## Project Structure
 
-- Advanced transformer-based sentiment analysis  
-- Real-time live stream analytics  
-- Multi-platform social media integration  
-- AI toxicity and spam detection  
-- Emotion recognition system  
-- Cloud deployment pipeline  
-- User authentication system  
-- Real-time dashboard streaming  
-- Fine-tuned multilingual LLM integration  
-
----
-
-# Project Highlights
-
-- AI-powered sentiment intelligence platform  
-- Real-time YouTube analytics dashboard  
-- Transformer-based NLP pipeline  
-- OpenAI-generated audience insights  
-- Interactive visualization system  
-- Full-stack AI analytics workflow  
-- Modern dark-themed dashboard UI  
-- Industrial-level NLP engineering architecture  
+```
+sentilytics/
+├── sentilytics/
+│   └── sentilytics_scraper/   # YouTube comment extraction
+│       ├── scraper.py         # YouTube Data API integration
+│       ├── preprocessor.py    # Text cleaning pipeline
+│       └── sentiment.py       # BERT + VADER classification
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-# Author
+## Future Improvements
 
-## Abirami Muthiah
-
-Applied AI Engineer | NLP & Data Science Developer  
-
-### Specializations
-
-- Natural Language Processing  
-- Applied AI Systems  
-- Machine Learning  
-- AI Analytics Platforms  
-- Deep Learning  
-- Full-Stack AI Development  
-
-GitHub:
-
-https://github.com/AbiramiMuthiah
+- Multi-platform support (Twitter/X, Reddit, Instagram)
+- Real-time live stream comment analysis
+- Emotion detection (beyond positive/negative/neutral)
+- Fine-tuned multilingual BERT model
+- User authentication and saved analysis history
+- Cloud deployment on Streamlit Cloud or AWS
 
 ---
 
-# License
+## Author
 
-Licensed under the MIT License.
+**Abirami Muthiah**  
+Applied AI Engineer | NLP | Data Science
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-abiramimuthiah--portfolio.vercel.app-blue?style=flat-square)](https://abiramimuthiah-portfolio.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-AbiramiMuthiah-181717?style=flat-square&logo=github)](https://github.com/AbiramiMuthiah)
+
+---
+
+## License
+
+Licensed under the [MIT License](LICENSE).

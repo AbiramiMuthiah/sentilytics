@@ -1,0 +1,30 @@
+# Ignore Python compiled files
+__pycache__/
+*.py[cod]
+*.so
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore output files
+*.csv
+*.tsv
+*.log
+
+# Ignore environment and secrets
+.env
+
+# Ignore Jupyter notebooks (optional)
+*.ipynb
+
+# Ignore VS Code settings (optional)
+.vscode/
+
+# Ignore cache or pip metadata
+pip-wheel-metadata/
+*.egg-info/
